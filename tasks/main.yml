@@ -1,0 +1,16 @@
+---
+# tasks file for sectigo-certbot
+- name: create incommon user directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+    recurse: yes
+  loop:
+    - "/etc/letsencrypt/"
+- name: Install LetsEncrypt CLI
+  template:
+    src: cli.j2
+    dest: "/etc/letsencrypt/cli.ini"

@@ -1,0 +1,4 @@
+---
+# defaults file for sectigo-certbot
+sectigo_eab_kid: ""
+sectigo_eab_hmac:  ""
